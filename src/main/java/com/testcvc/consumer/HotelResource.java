@@ -22,7 +22,7 @@ public class HotelResource {
 	@Autowired
 	private HotelService hotelService;
 	
-	@RequestMapping(value = "/hotels/load/{cityCode}/{checkin}/{checkout}/{adults}/{childs}", method = RequestMethod.GET)
+	@RequestMapping(value = "/hotels/get/{cityCode}/{checkin}/{checkout}/{adults}/{childs}", method = RequestMethod.GET)
 	public Response loadHotels(@PathVariable(value = "cityCode") Long cityCode,
 			@PathVariable(value = "checkin") String checkin,
 				@PathVariable(value = "checkout") String checkout,
@@ -46,7 +46,7 @@ public class HotelResource {
 		return resp;
 	}
 	
-	@RequestMapping(value = "/hotels/load/detail/{idHotel}", method = RequestMethod.GET)
+	@RequestMapping(value = "/hotels/get/detail/{idHotel}", method = RequestMethod.GET)
 	public Response loadHotelsDetail(@PathVariable(value = "idHotel") Long idHotel, HttpServletResponse response) {
 		Response resp = new Response();
 		resp.setSuccess(true);
